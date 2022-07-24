@@ -77,6 +77,7 @@ const Repository = () => {
             setLimit={setLimit}
             page={page}
             setPage={setPage}
+            total={total}
           />
         )}
       </Box>

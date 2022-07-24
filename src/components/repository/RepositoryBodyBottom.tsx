@@ -5,9 +5,16 @@ interface Props {
   setLimit: React.Dispatch<React.SetStateAction<number>>;
   page: number;
   setPage: React.Dispatch<React.SetStateAction<number>>;
+  total: number;
 }
 
-const RepositoryBodyBottom = ({ limit, setLimit, page, setPage }: Props) => {
+const RepositoryBodyBottom = ({
+  limit,
+  setLimit,
+  page,
+  setPage,
+  total,
+}: Props) => {
   const handleChangePage = (
     event: React.MouseEvent<HTMLButtonElement> | null,
     newPage: number
@@ -44,7 +51,7 @@ const RepositoryBodyBottom = ({ limit, setLimit, page, setPage }: Props) => {
             color: "#fff",
           },
         }}
-        count={100}
+        count={total}
         page={page - 1}
         onPageChange={handleChangePage}
         rowsPerPage={limit}
